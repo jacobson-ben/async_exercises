@@ -1,7 +1,12 @@
 async function getNumbers(...args) {
+  try {
   resp = await axios.get(`http://numbersapi.com/${args}`);
   data = resp.data
   appendToPage(data)
+  }
+  catch(e) {
+    "There is an error"
+  }
 }
 
 function appendToPage(data) {
